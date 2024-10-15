@@ -14,10 +14,10 @@ header {
 }
 
 .main-title {
-    font-size: 72px;
+    font-size: 80px;
     font-weight: 900;
     margin-bottom: 0px;
-    margin-top: 50px;
+    margin-top: 40px;
     text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -26,11 +26,12 @@ header {
     font-size: 24px;
     font-weight: 900;
     text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.5px;
 }
 
 .container {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 490px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,11 +60,16 @@ header {
 .field {
     height: 110px;
     width: 110px;
-    /* border: 1px solid white; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(86, 49, 180);
     border-radius: 15px;
     transition: 0.2s ease-in-out;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    font-family: "Roboto";
+    font-size: 60px;
+    font-weight: bold;
 }
 
 .field:hover {
@@ -71,6 +77,10 @@ header {
     cursor: pointer;
     transform: scale(1.05);
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
+.field:active {
+    transform: scale(1);
 }
 
 #restart {
@@ -92,4 +102,24 @@ header {
     cursor: pointer;
     transform: scale(1.03);
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+}
+
+#restart:active {
+    transform: scale(0.95);
+}
+
+.field.x {
+    background-color: rgba(229, 191, 53, 0.5);
+}
+
+.field.o {
+    background-color: rgba(191, 21, 86, 0.5);
+}
+
+.winner {
+    background-color: rgb(124, 185, 32) !important;
+}
+
+.blank {
+    background-color: rgb(63, 35, 133) !important;
 }

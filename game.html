@@ -8,15 +8,19 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+
+    <script src="gameLogic.js" defer></script>
 </head>
 
 <body>
     <header>
         <p class="main-title">TicTacToe</p>
-        <p class="sub-title">with MiniMax algorithm</p>
+        <p class="sub-title">with MiniMax algorithm (to be implemented)</p>
     </header>
     <div class="container">
         <div class="board" id="gameBoard">
+            <div class="field" data-index="0"></div>
             <div class="field" data-index="1"></div>
             <div class="field" data-index="2"></div>
             <div class="field" data-index="3"></div>
@@ -25,9 +29,8 @@
             <div class="field" data-index="6"></div>
             <div class="field" data-index="7"></div>
             <div class="field" data-index="8"></div>
-            <div class="field" data-index="9"></div>
         </div>
-        <div class="status" id="status">Turn: X</div>
+        <div class="status" id="status">Turn of Player X</div>
         <button id="restart" onclick="restartGame()">Restart Game</button>
 
 
