@@ -9,10 +9,6 @@ body {
     font-weight: 300;
 }
 
-div {
-    border: 1px solid white;
-}
-
 header {
     text-align: center;
 }
@@ -60,14 +56,40 @@ header {
     margin-top: 10px;
 }
 
+.field {
+    height: 110px;
+    width: 110px;
+    /* border: 1px solid white; */
+    background-color: rgb(86, 49, 180);
+    border-radius: 15px;
+    transition: 0.2s ease-in-out;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.field:hover {
+    background-color: rgb(77, 44, 162);
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+}
+
 #restart {
     margin-top: 10px;
     width: 150px;
     height: 40px;
+    background-color: rgb(160, 69, 0);
+    border-radius: 10px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 16px;
+    border: 0;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: 0.2s ease;
 }
 
-.field {
-    height: 110px;
-    width: 110px;
-    border: 1px solid white;
+#restart:hover {
+    background-color: rgb(183, 79, 0);
+    cursor: pointer;
+    transform: scale(1.03);
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
 }
