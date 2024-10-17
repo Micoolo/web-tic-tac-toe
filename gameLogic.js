@@ -1,4 +1,7 @@
 const gameStatus = document.getElementById("status");
+const countX = document.getElementById("playerX");
+const countO = document.getElementById("playerO");
+const countDraws = document.getElementById("draws");
 const fields = document.querySelectorAll(".field");
 let currentPlayer = 'X';
 let board = Array(9).fill(null);
@@ -18,8 +21,15 @@ const winningCombinations = [
 function fieldClick(event) {
     const index = event.target.dataset.index;
     
-    if (board[index] !== null || !gameActive) return;
+    if (board[index] !== null || !gameActive) return; 
+
+    //adding the click animation class and removing it after its done 
+    event.target.classList.add('clickAnimation');
+    event.target.addEventListener('animationend', () => {
+        event.target.classList.remove('clickAnimation');
+    }, { once: true });
     
+    //adding text and class to clicked field
     board[index] = currentPlayer;
     event.target.textContent = currentPlayer;
     event.target.classList.add(currentPlayer.toLowerCase());
@@ -27,12 +37,15 @@ function fieldClick(event) {
     if (checkWin()) {
         highlightWinningFields();
         gameStatus.textContent = `Player ${currentPlayer} wins!`;
+        pointsCounter();
         gameEnded();
         return;
     }
     
+    //checking if draw occured
     if (board.every(field => field !== null)) {
         gameStatus.textContent = 'Draw!';
+        countDraws.textContent = parseInt(countDraws.textContent) + 1;
         gameEnded();
         return;
     }
@@ -77,4 +90,12 @@ function gameEnded() {
             field.classList.add('blank');
         }
     });
+}
+
+function pointsCounter() {
+    if(currentPlayer == 'X') {
+        countX.textContent = parseInt(countX.textContent) + 1;
+    } else if (currentPlayer == 'O') {
+        countO.textContent = parseInt(countO.textContent) + 1;
+    }
 }

@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(34, 13, 86);
+    background-color: rgb(57, 17, 122);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -18,14 +18,15 @@ div {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 190px;
+    height: 200px;
     background-color: rgb(34, 13, 86);
 }
 
 header {
-    width: 550px;
+    width: 100vw;
     text-align: center;
-    height: 150px;
+    height: 170px;
+    /* border: 1px solid white; */
 }
 
 header a {
@@ -39,6 +40,7 @@ header a {
     background-color: rgb(34, 13, 86);
     display: flex;
     justify-content: center;
+    color: white;
 }
 
 .menuOption {
@@ -59,7 +61,7 @@ header a {
 }
 
 .main-title {
-    font-size: 80px;
+    font-size: 88px;
     font-weight: 900;
     margin-bottom: 0px;
     margin-top: 10px;
@@ -74,7 +76,7 @@ header a {
 .sub-title {
     margin-top: 0px;
     margin-bottom: 0px;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: 900;
     letter-spacing: 0.5px;
     text-shadow:
@@ -88,7 +90,7 @@ header a {
 .container {
     display: flex;
     position: relative;
-    margin-top: 5px;
+    margin-top: 50px;
     width: 100vw;
     height: 490px; 
     justify-content: center;
@@ -186,8 +188,14 @@ header a {
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
 }
 
-.field:active {
-    transform: scale(0.95);
+@keyframes clickAnimation {
+    0% { transform: scale(1.05); }
+    50% { transform: scale(0.95); }
+    100% { transform: scale(1); }
+}
+
+.clickAnimation {
+    animation: clickAnimation 0.2s ease-in-out;
 }
 
 
@@ -195,14 +203,14 @@ header a {
     margin-top: 10px;
     width: 150px;
     height: 40px;
-    background-color: rgb(160, 69, 0);
+    background-color: rgb(180, 104, 4);
     border-radius: 10px;
     font-family: inherit;
     font-weight: 700;
     font-size: 16px;
     border: 0;
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
     transition: 0.2s ease;
+    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 #restart:hover {
