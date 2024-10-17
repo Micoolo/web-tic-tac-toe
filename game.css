@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(63, 35, 133);
+    background-color: rgb(34, 13, 86);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -9,24 +9,76 @@ body {
     font-weight: 300;
 }
 
+.logo {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 190px;
+    background-color: rgb(34, 13, 86);
+}
+
 header {
+    width: 550px;
     text-align: center;
+    height: 150px;
+}
+
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu {
+    width: 100vw;
+    height: 40px;
+    background-color: rgb(34, 13, 86);
+    display: flex;
+    justify-content: center;
+}
+
+.menuOption {
+    width: 190px;
+    text-align: center;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: 700;
+    transition: 0.2s ease-out;
+}
+
+.menuOption:hover {
+    background-color: rgb(44, 18, 112);
+    cursor: pointer;
 }
 
 .main-title {
     font-size: 80px;
     font-weight: 900;
     margin-bottom: 0px;
-    margin-top: 40px;
-    text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
+    margin-top: 10px;
+    text-shadow: 
+    7px 7px 7px rgba(0, 0, 0, 0.3),
+    -1px -1px 0 white,
+     1px -1px 0 white,
+    -1px  1px 0 white,
+     1px  1px 0 white;
 }
 
 .sub-title {
     margin-top: 0px;
+    margin-bottom: 0px;
     font-size: 24px;
     font-weight: 900;
-    text-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
     letter-spacing: 0.5px;
+    text-shadow:
+    6px 6px 6px rgba(0, 0, 0, 0.3),
+    -0.5px -0.5px 0 white,  
+    0.5px -0.5px 0 white,
+    -0.5px  0.5px 0 white,
+    0.5px  0.5px 0 white;
 }
 
 .container {
@@ -72,7 +124,7 @@ header {
     font-weight: bold;
 }
 
-.field:hover {
+.field:hover{
     background-color: rgb(77, 44, 162);
     cursor: pointer;
     transform: scale(1.05);
@@ -80,8 +132,9 @@ header {
 }
 
 .field:active {
-    transform: scale(1);
+    transform: scale(0.95);
 }
+
 
 #restart {
     margin-top: 10px;
@@ -106,6 +159,8 @@ header {
 
 #restart:active {
     transform: scale(0.95);
+    padding-left: 10px;
+    padding-top: 2px;
 }
 
 .field.x {
@@ -117,9 +172,15 @@ header {
 }
 
 .winner {
-    background-color: rgb(124, 185, 32) !important;
+    background-color: rgb(113, 168, 30) !important;
 }
 
 .blank {
-    background-color: rgb(63, 35, 133) !important;
+    background-color: rgb(34, 13, 86) !important;
+}
+
+.x:hover, .o:hover, .winner:hover, .blank:hover {
+    transform: none;
+    cursor: default;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
 }
