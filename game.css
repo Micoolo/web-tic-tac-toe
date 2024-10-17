@@ -9,6 +9,10 @@ body {
     font-weight: 300;
 }
 
+div {
+    /* border: 1px solid white; */
+}
+
 .logo {
     width: 100%;
     display: flex;
@@ -82,6 +86,56 @@ header a {
 }
 
 .container {
+    display: flex;
+    position: relative;
+    margin-top: 5px;
+    width: 100vw;
+    height: 490px; 
+    justify-content: center;
+    align-items: center;
+
+}
+
+.scoreContainer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(200px);
+    width: 200px;
+    height: 490px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.scoreText {
+    width: 100px;
+    height: 30px;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 50px;
+}
+
+.score {
+    width: 100px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: rgb(136, 158, 214);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.gameContainer {
+    position: relative;
     width: 400px;
     height: 490px;
     display: flex;
@@ -103,10 +157,11 @@ header a {
 
 .status {
     text-align: center;
-    font-size: 20px;
+    font-size: 23px;
     font-weight: 700;
     padding: 5px;
     margin-top: 10px;
+    color: white;
 }
 
 .field {

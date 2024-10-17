@@ -28,21 +28,29 @@
         </div>
     </div>
     <div class="container">
-        <div class="board" id="gameBoard">
-            <div class="field" data-index="0"></div>
-            <div class="field" data-index="1"></div>
-            <div class="field" data-index="2"></div>
-            <div class="field" data-index="3"></div>
-            <div class="field" data-index="4"></div>
-            <div class="field" data-index="5"></div>
-            <div class="field" data-index="6"></div>
-            <div class="field" data-index="7"></div>
-            <div class="field" data-index="8"></div>
+        <div class="gameContainer">
+            <div class="board" id="gameBoard">
+                <div class="field" data-index="0"></div>
+                <div class="field" data-index="1"></div>
+                <div class="field" data-index="2"></div>
+                <div class="field" data-index="3"></div>
+                <div class="field" data-index="4"></div>
+                <div class="field" data-index="5"></div>
+                <div class="field" data-index="6"></div>
+                <div class="field" data-index="7"></div>
+                <div class="field" data-index="8"></div>
+            </div>
+            <div class="status" id="status">Turn of Player X</div>
+            <button id="restart" onclick="restartGame()">Restart Game</button>
         </div>
-        <div class="status" id="status">Turn of Player X</div>
-        <button id="restart" onclick="restartGame()">Restart Game</button>
-
-
+        <div class="scoreContainer">
+            <div class="scoreText">Player X:</div>
+            <div class="score" id="playerX">0</div>
+            <div class="scoreText">Player O:</div>
+            <div class="score" id="playerO">0</div>
+            <div class="scoreText">Draws:</div>
+            <div class="score" id="Draws">0</div>
+        </div>
     </div>
 </body>
 </html>
