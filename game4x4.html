@@ -22,14 +22,14 @@
             </a>
             </header>
         <div class="menu">
-            <div class="menuOption" id="board3x3">3x3 Board</div>
-            <div class="menuOption" id="description">Algorithm description</div>
-            <div class="menuOption" id="board4x4">4x4 Board</div>
+            <div class="menuOption" id="option3x3" onclick="location.href='game3x3.html';">3x3 Board</div>
+            <div class="menuOption" id="optionDescrytpion">Algorithm description</div>
+            <div class="menuOption" id="option4x4" onclick="location.href='game4x4.html';">4x4 Board</div>
         </div>
     </div>
     <div class="container">
-        <div class="gameContainer">
-            <div class="board" id="gameBoard">
+        <div class="gameContainer" id="gameContainer4x4">
+            <div class="board" id="board4x4">
                 <div class="field" data-index="0"></div>
                 <div class="field" data-index="1"></div>
                 <div class="field" data-index="2"></div>
@@ -39,11 +39,21 @@
                 <div class="field" data-index="6"></div>
                 <div class="field" data-index="7"></div>
                 <div class="field" data-index="8"></div>
+                <div class="field" data-index="9"></div>
+                <div class="field" data-index="10"></div>
+                <div class="field" data-index="11"></div>
+                <div class="field" data-index="12"></div>
+                <div class="field" data-index="13"></div>
+                <div class="field" data-index="14"></div>
+                <div class="field" data-index="15"></div>
             </div>
-            <div class="status" id="status">Turn of Player X</div>
-            <button id="restart" onclick="restartGame()">Restart Game</button>
+            <div class="restartButton" id="restartButton4x4">
+                <button id="restart" onclick="restartGame()">Restart Game</button>
+                <div class="restartShadow"></div>
+            </div>
         </div>
         <div class="scoreContainer">
+            <div class="status" id="status">Turn of Player X</div>
             <div class="scoreText">Player X:</div>
             <div class="score" id="playerX">0</div>
             <div class="scoreText">Player O:</div>

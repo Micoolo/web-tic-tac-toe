@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TicTacToe with MiniMax algorithm</title>
+    <link rel="stylesheet" href="game.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+
+    <script src="gameLogic.js" defer></script>
+</head>
+
+<body>
+    <div class="logo">
+            <header>
+            <a href="">
+                <p class="main-title">TicTacToe</p>
+                <p class="sub-title">with MiniMax algorithm (to be implemented)</p>
+            </a>
+            </header>
+        <div class="menu">
+            <div class="menuOption" id="option3x3" onclick="location.href='game3x3.html';">3x3 Board</div>
+            <div class="menuOption" id="optionDescrytpion">Algorithm description</div>
+            <div class="menuOption" id="option4x4" onclick="location.href='game4x4.html';">4x4 Board</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="gameContainer" id="gameContainer3x3">
+            <div class="board" id="board3x3">
+                <div class="field" data-index="0"></div>
+                <div class="field" data-index="1"></div>
+                <div class="field" data-index="2"></div>
+                <div class="field" data-index="3"></div>
+                <div class="field" data-index="4"></div>
+                <div class="field" data-index="5"></div>
+                <div class="field" data-index="6"></div>
+                <div class="field" data-index="7"></div>
+                <div class="field" data-index="8"></div>
+            </div>
+            <div class="restartButton" id="restartButton3x3">
+                <button id="restart" onclick="restartGame()">Restart Game</button>
+                <div class="restartShadow"></div>
+            </div>
+        </div>
+        <div class="scoreContainer">
+            <div class="status" id="status">Turn of Player X</div>
+            <div class="scoreText">Player X:</div>
+            <div class="score" id="playerX">0</div>
+            <div class="scoreText">Player O:</div>
+            <div class="score" id="playerO">0</div>
+            <div class="scoreText">Draws:</div>
+            <div class="score" id="draws">0</div>
+        </div>
+    </div>
+</body>
+</html>

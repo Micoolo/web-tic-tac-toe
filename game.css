@@ -14,7 +14,7 @@ div {
 }
 
 .logo {
-    width: 100%;
+    width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -44,6 +44,7 @@ header a {
 }
 
 .menuOption {
+    display: block;
     width: 190px;
     text-align: center;
     padding: 5px;
@@ -90,9 +91,8 @@ header a {
 .container {
     display: flex;
     position: relative;
-    margin-top: 50px;
     width: 100vw;
-    height: 490px; 
+    height: 580px; 
     justify-content: center;
     align-items: center;
 
@@ -102,12 +102,21 @@ header a {
     position: absolute;
     top: 0;
     left: 50%;
-    transform: translateX(200px);
-    width: 200px;
-    height: 490px;
+    transform: translateX(300px);
+    width: 240px;
+    height: 580px;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.status {
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    padding: 5px;
+    margin-top: 60px;
+    color: white;
 }
 
 .scoreText {
@@ -136,17 +145,17 @@ header a {
     justify-content: center;
 }
 
-.gameContainer {
+#gameContainer3x3 {
     position: relative;
     width: 400px;
-    height: 490px;
+    height: 580px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.board {
-    margin-top: 10px;
+#board3x3 {
+    margin-top: 80px;
     height: 370px;
     width: 370px;
     display: grid;
@@ -157,13 +166,25 @@ header a {
     gap: 10px;
 }
 
-.status {
-    text-align: center;
-    font-size: 23px;
-    font-weight: 700;
-    padding: 5px;
+#gameContainer4x4 {
+    position: relative;
+    width: 520px;
+    height: 580px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#board4x4 {
     margin-top: 10px;
-    color: white;
+    height: 490px;
+    width: 490px;
+    display: grid;
+    grid-template-columns: repeat(4, 110px);
+    grid-template-rows: repeat(4, 110px);
+    justify-content: center;
+    align-content: center;
+    gap: 10px;
 }
 
 .field {
@@ -198,33 +219,55 @@ header a {
     animation: clickAnimation 0.2s ease-in-out;
 }
 
+.restartButton {
+    position: relative;
+    height: 45px;
+    width: 150px;
+}
+
+#restartButton3x3 {
+    margin-top: 70px;
+}
+
+#restartButton4x4 {
+    margin-top: 20px;    
+}
+
+.restartShadow {
+    position: absolute;
+    background-color: rgb(131, 88, 31);
+    height: 25px;
+    width: 150px;
+    top: 20px;
+    border-radius: 5px;
+}
 
 #restart {
-    margin-top: 10px;
+    position: relative;
+    z-index: 10;
     width: 150px;
     height: 40px;
-    background-color: rgb(180, 104, 4);
-    border-radius: 10px;
+    background-color: rgb(241, 186, 114);
+    border-radius: 5px;
     font-family: inherit;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 18px;
     border: 0;
     transition: 0.2s ease;
     box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 #restart:hover {
-    background-color: rgb(183, 79, 0);
+    background-color: rgb(213, 154, 78);
     cursor: pointer;
-    transform: scale(1.03);
     box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
 }
 
 #restart:active {
-    transform: scale(0.95);
-    padding-left: 10px;
-    padding-top: 2px;
+    top: 5px;
 }
+
+
 
 .field.x {
     background-color: rgba(229, 191, 53, 0.5);
