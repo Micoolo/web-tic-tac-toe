@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 1040px;
+    height: 1000px;
+    border: 1px solid white;
+}
+
+.descriptionContainer {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(57, 17, 122);
+    width: 1000px;
+    height: 500px;
+    padding: 20px;
+    color: rgb(230, 230, 230);
+    font-size: 23px;
+    font-weight: 500;
+    border: 1px solid white;
+}
+
+.example {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1040px;
+    height: 500px;
+    font-size: 30px;
+    font-weight: 500;
+    color: white;
+    overflow: hidden;
+}
+
+.imageContainer {
+    position: relative;
+    height: 296px;
+    width: 447px;
+}
+
+.image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.image.active {
+    opacity: 1;
+}

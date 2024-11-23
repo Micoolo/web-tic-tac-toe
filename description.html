@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TicTacToe with MiniMax algorithm</title>
+    <link rel="stylesheet" href="description.css">
+    <link rel="stylesheet" href="background_header.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+
+    <script src="exampleAnimation.js" defer></script>
+</head>
+
+<body>
+    <div class="logo">
+            <header>
+            <a href="">
+                <p class="main-title">TicTacToe</p>
+                <p class="sub-title">with MiniMax algorithm (to be implemented)</p>
+            </a>
+            </header>
+        <div class="menu">
+            <div class="menuOption" id="option3x3" onclick="location.href='game3x3.html';">3x3 Board</div>
+            <div class="menuOption" id="optionDescrytpion" onclick="location.href='description.html';">Algorithm description</div>
+            <div class="menuOption" id="option4x4" onclick="location.href='game4x4.html';">4x4 Board</div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="descriptionContainer">
+            Algorytm minimax jest powszechnie używany w teorii decyzji oraz w grach wymagających ruchów komputera. 
+            Polega na maksymalizacji minimalnego zysku w każdym ruchu.
+            Tworzy drzewo rozwiązań i na jego 
+            podstawie wybiera ruchy, które doprowadzą do najkorzystniejszej sytuacji na planszy dla komputera:
+            <br/>
+            <ul>
+                <li><strong>Węzły</strong> reprezentują stan gry po wykonaniu konkretnego ruchu.</li>
+                <li><strong>Gałęzie</strong> reprezentują możliwe ruchy.</li>
+                <li><strong>Liście</strong> reprezentują sytuacje końcowe, gdzie znany jest wynik gry (np. wygrana, przegrana lub remis)</li>
+            </ul>
+            Dla każdego liścia w drzewie zostaje przypisana wartość. Zakładając, że algorytm maksymalizuje zysk, przykładowe wartości liści mogą wyglądać następująco:
+            <br>
+            <ul>
+                <li><strong>Wygrana</strong> = 10</li>
+                <li><strong>Remis</strong> = 0</li>
+                <li><strong>Przegrana</strong> = -10</li>
+            </ul>
+            <strong>UWAGA!</strong> Algorytm zakłada, że przeciwnik (gracz) będzie wybierał optymalne ruchy w swoich turach.
+        </div>
+        <div class="example">
+            <p class="exampleText">Przykład</p>
+            <div class="imageContainer">
+                <img src="images/minmaxv1.png" class="image">
+                <img src="images/minmaxv2.png" class="image">
+                <img src="images/minmaxv3.png" class="image">
+                <img src="images/minmaxv4.png" class="image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

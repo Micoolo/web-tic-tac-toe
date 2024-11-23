@@ -1,0 +1,94 @@
+body {
+    background-color: rgb(57, 17, 122);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    scrollbar-width: none;
+    margin: 0;
+    font-family: "Bitter", serif;
+    font-weight: 300;
+}
+
+/* scrollbar remove */
+html {
+    -ms-overflow-style: none; /*Internet Explorer 10+ */
+    scrollbar-width: none;    /*Firefox */
+}
+html::-webkit-scrollbar {
+    display: none; /*Safari and Chrome */
+}
+
+.logo {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 200px;
+    background-color: rgb(34, 13, 86);
+}
+
+header {
+    width: 100vw;
+    text-align: center;
+    height: 170px;
+}
+
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.menu {
+    width: 100vw;
+    height: 40px;
+    background-color: rgb(34, 13, 86);
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.menuOption {
+    display: block;
+    width: 190px;
+    text-align: center;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    font-weight: 700;
+    transition: 0.2s ease-out;
+}
+
+.menuOption:hover {
+    background-color: rgb(44, 18, 112);
+    cursor: pointer;
+}
+
+.main-title {
+    font-size: 88px;
+    font-weight: 900;
+    margin-bottom: 0px;
+    margin-top: 10px;
+    text-shadow: 
+    7px 7px 7px rgba(0, 0, 0, 0.3),
+    -1px -1px 0 white,
+     1px -1px 0 white,
+    -1px  1px 0 white,
+     1px  1px 0 white;
+}
+
+.sub-title {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    text-shadow:
+    6px 6px 6px rgba(0, 0, 0, 0.3),
+    -0.5px -0.5px 0 white,  
+    0.5px -0.5px 0 white,
+    -0.5px  0.5px 0 white,
+    0.5px  0.5px 0 white;
+}
