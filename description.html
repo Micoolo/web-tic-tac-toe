@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
     <script src="exampleAnimation.js" defer></script>
 </head>
@@ -50,12 +51,26 @@
             <strong>UWAGA!</strong> Algorytm zakłada, że przeciwnik (gracz) będzie wybierał optymalne ruchy w swoich turach.
         </div>
         <div class="example">
-            <p class="exampleText">Przykład</p>
-            <div class="imageContainer">
-                <img src="images/minmaxv1.png" class="image">
-                <img src="images/minmaxv2.png" class="image">
-                <img src="images/minmaxv3.png" class="image">
-                <img src="images/minmaxv4.png" class="image">
+            <div class="exampleText">Przykład</div>
+            <div class="exampleGIF">
+                <div class="imageContainer">
+                    <img src="images/minmaxv1.png" class="image">
+                    <img src="images/minmaxv2.png" class="image">
+                    <img src="images/minmaxv3.png" class="image">
+                    <img src="images/minmaxv4.png" class="image">
+                </div>
+                <div class="playShadow">
+                    <button class="exampleButton" id="playButton"><i class="fa-solid fa-play"></i></button>
+                    <div class="shadow"></div>
+                </div>
+                <div class="previousShadow">
+                    <button class="exampleButton" id="previousButton"><i class="fa-solid fa-backward-step"></i></button>
+                    <div class="shadow"></div>
+                </div>
+                <div class="nextShadow">
+                    <button class="exampleButton" id="nextButton"><i class="fa-solid fa-forward-step"></i></button>
+                    <div class="shadow"></div>
+                </div>
             </div>
         </div>
     </div>

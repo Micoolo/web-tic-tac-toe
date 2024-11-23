@@ -2,21 +2,18 @@
     display: flex;
     flex-direction: column;
     width: 1040px;
-    height: 1000px;
-    border: 1px solid white;
+    height: 1500px;
 }
 
 .descriptionContainer {
     display: flex;
     flex-direction: column;
-    background-color: rgb(57, 17, 122);
     width: 1000px;
     height: 500px;
     padding: 20px;
     color: rgb(230, 230, 230);
     font-size: 23px;
     font-weight: 500;
-    border: 1px solid white;
 }
 
 .example {
@@ -24,11 +21,20 @@
     flex-direction: column;
     align-items: center;
     width: 1040px;
-    height: 500px;
+    height: 1000px;
+    overflow: hidden;
+}
+
+.exampleText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
     font-size: 30px;
     font-weight: 500;
-    color: white;
-    overflow: hidden;
+    width: 1040px;
+    height: 80px;
+    padding-top: 10px;
 }
 
 .imageContainer {
@@ -50,3 +56,68 @@
 .image.active {
     opacity: 1;
 }
+
+.exampleGIF {
+    position: relative;
+    width: 1040px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.exampleButton {
+    position: relative;
+    border-radius: 20px;
+    height: 80px;
+    width: 80px;
+    background-color: rgb(241, 186, 114);
+    border: 0px;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+}
+
+.exampleButton:hover {
+    cursor: pointer;
+    color: rgb(103, 118, 255);
+}
+
+.exampleButton:active {
+    top: 5px;
+}
+
+.shadowButton:active {
+    top: 5px;
+}
+
+.playShadow {
+    position: absolute;
+    height: 85px;
+    top: 20px;
+    transform: translateX(362px);
+}
+
+.previousShadow {
+    position: absolute;
+    height: 85px;
+    top: 120px;
+    transform: translateX(312px);
+}
+
+.nextShadow {
+    position: absolute;
+    height: 85px;
+    top: 120px;
+    transform: translateX(412px);
+}
+
+.shadow {
+    position: absolute;
+    background-color: rgb(197, 4, 4);
+    top: 5px;
+    height: 80px;
+    width: 80px;
+    border-radius: 20px;
+    z-index: -1;
+    background-color: rgb(131, 88, 31);
+}
+
