@@ -41,6 +41,7 @@ header a {
 
 .menu {
     position: sticky;
+    z-index: 100;
     top: 0;
     width: 100vw;
     height: 40px;

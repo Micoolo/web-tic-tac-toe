@@ -4,6 +4,8 @@ const countO = document.getElementById("playerO");
 const countDraws = document.getElementById("draws");
 const fields = document.querySelectorAll(".field");
 let currentPlayer = 'X';
+let sign = 'O'; // algorithm
+let opSign = 'X'; // player
 let gameActive = true;
 let boardSize, winningCombinations;
 
@@ -53,7 +55,7 @@ function fieldClick(event) {
     event.target.textContent = currentPlayer;
     event.target.classList.add(currentPlayer.toLowerCase());
 
-    if (checkWin()) {
+    if (checkWin(currentPlayer)) {
         highlightWinningFields();
         gameStatus.textContent = `Player ${currentPlayer} wins!`;
         pointsCounter();
@@ -61,8 +63,7 @@ function fieldClick(event) {
         return;
     }
     
-    //checking if draw occured
-    if (board.every(field => field !== null)) {
+    if (checkDraw()) {
         gameStatus.textContent = 'Draw!';
         countDraws.textContent = parseInt(countDraws.textContent) + 1;
         gameEnded();
@@ -73,12 +74,23 @@ function fieldClick(event) {
     gameStatus.textContent = `Turn of Player ${currentPlayer}`;
 }
 
-fields.forEach(field => field.addEventListener('click', fieldClick));
+fields.forEach(field => field.addEventListener('click', event => {
+    fieldClick(event);
+    if (currentPlayer === sign && gameActive) {
+        setTimeout(algorithmMove, 500);
+    }
+}));
 
-function checkWin() {
+function checkWin(player) {
     return winningCombinations.some(combination => {
-        return combination.every(index => board[index] === currentPlayer);
+        return combination.every(index => board[index] === player);
     });
+}
+
+
+function checkDraw() {
+    return board.every(field => field !== null) && !checkWin(sign) && !checkWin(opSign);
+    
 }
 
 function highlightWinningFields() {

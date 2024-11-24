@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>TicTacToe with MiniMax algorithm</title>
-    <link rel="stylesheet" href="description.css">
-    <link rel="stylesheet" href="background_header.css">
+    <link rel="stylesheet" href="styles/description.css">
+    <link rel="stylesheet" href="styles/background_header.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
-    <script src="exampleAnimation.js" defer></script>
+    <script src="scripts/exampleAnimation.js" defer></script>
 </head>
 
 <body>
@@ -20,7 +20,7 @@
         <header>
             <a href="">
                 <p class="main-title">TicTacToe</p>
-                <p class="sub-title">with MiniMax algorithm (to be implemented)</p>
+                <p class="sub-title">with MiniMax algorithm</p>
             </a>
         </header>
     </div>
@@ -72,6 +72,18 @@
                     <div class="shadow"></div>
                 </div>
             </div>
+        </div>
+        <div class="alphaBetaExample">
+            <div class="ABText">Cięcia alfa-beta</div>
+            Cięcia alfa-beta „odcinają” gałąź, jeśli algorytm wie, że uzyska z niej gorszy wynik niż z gałęzi poprzedniej. 
+            Dzięki temu algorytm nie przeszukuje niepotrzebnie wszystkich gałęzi, co prowadzi do przyspieszenia działania.
+            <div class="ABImage">
+                <img src="images/alfaBeta.png">
+            </div>
+            Jak widać na przykładzie, węzeł maksymalizujący (korzeń) wie, że z lewej gałęzi uzyska wartość -1, a z prawej nie większą niż -4.
+            Dzięki temu nie ma potrzeby kontynuowania algorytmu dla prawej gałęzi. 
+            Takie usprawnienie może być szczególnie odczuwalne dla drzew głębokich, 
+            gdzie liczba iteracji znacząco zwiększa się z każdym poziomem.
         </div>
     </div>
 </body>

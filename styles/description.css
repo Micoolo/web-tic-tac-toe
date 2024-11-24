@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     width: 1040px;
-    height: 1500px;
+    height: 1660px;
 }
 
 .descriptionContainer {
@@ -21,7 +21,7 @@
     flex-direction: column;
     align-items: center;
     width: 1040px;
-    height: 1000px;
+    height: 420px;
     overflow: hidden;
 }
 
@@ -29,7 +29,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: rgb(230, 230, 230);
     font-size: 30px;
     font-weight: 500;
     width: 1040px;
@@ -72,7 +72,6 @@
     width: 80px;
     background-color: rgb(241, 186, 114);
     border: 0px;
-    /* color: rgb(255, 255, 255); */
     color: rgb(168, 139, 101);
     font-size: 40px;
 }
@@ -122,4 +121,37 @@
     background-color: rgb(150, 123, 87);
     color: rgb(233, 194, 143);
     pointer-events: none;
+}
+
+.alphaBetaExample {
+    width: 1000px;
+    height: 650px;
+    display: flex;
+    flex-direction: column;
+    color: rgb(230, 230, 230);
+    font-size: 23px;
+    font-weight: 500;
+    padding: 20px;
+}
+
+.ABText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(230, 230, 230);
+    font-size: 30px;
+    font-weight: 500;
+    width: 1040px;
+    height: 80px;
+    padding-top: 10px;
+}
+
+.ABImage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1040px;
+    height: 300px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
