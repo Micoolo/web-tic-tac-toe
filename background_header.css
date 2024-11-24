@@ -24,7 +24,7 @@ html::-webkit-scrollbar {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 200px;
+    height: 160px;
     background-color: rgb(34, 13, 86);
 }
 
@@ -40,6 +40,8 @@ header a {
 }
 
 .menu {
+    position: sticky;
+    top: 0;
     width: 100vw;
     height: 40px;
     background-color: rgb(34, 13, 86);
