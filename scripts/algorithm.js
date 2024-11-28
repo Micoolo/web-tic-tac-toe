@@ -1,3 +1,5 @@
+let maxDepth = 8;
+
 function algorithmMove () {
     if (!gameActive) return;
 
@@ -41,16 +43,16 @@ function algorithmMove () {
 }
 
 function minimax (alpha, beta, depth, isMaximizingPlayer) {
-    if (checkDraw()) {
+    if (checkDraw() || depth > maxDepth) {
         return 0;
     }
 
     if (checkWin(sign)) {
-        return 10 - depth;
+        return 100 - depth;
     }
 
     if (checkWin(opSign)) {
-        return -10 + depth;
+        return -100 + depth;
     }
 
     if(isMaximizingPlayer) {

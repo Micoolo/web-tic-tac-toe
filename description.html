@@ -48,7 +48,10 @@
                 <li><strong>Remis</strong> = 0</li>
                 <li><strong>Przegrana</strong> = -10</li>
             </ul>
-            <strong>UWAGA!</strong> Algorytm zakłada, że przeciwnik (gracz) będzie wybierał optymalne ruchy w swoich turach.
+            Algorytm zakłada, że przeciwnik (gracz) będzie wybierał optymalne ruchy w swoich turach. <br>
+            Założenie to jest potrzebne, ponieważ w sytuacji, w której algorytm nie zakładałby optymalnej gry przeciwnika,
+            mógłby błędnie wybrać ruch, który działa tylko w scenariuszu błędów gracza. <br>
+            Algorytm uwzględnia także nieoptymalne ruchy gracza i dzięki nim może łatwo doprowadzić do wygranej.
         </div>
         <div class="example">
             <div class="exampleText">Przykład</div>
