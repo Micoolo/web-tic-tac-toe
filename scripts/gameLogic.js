@@ -3,10 +3,16 @@ const countX = document.getElementById("playerX");
 const countO = document.getElementById("playerO");
 const countDraws = document.getElementById("draws");
 const fields = document.querySelectorAll(".field");
+const easyButton = document.getElementById("easy")
+const mediumButton = document.getElementById("medium")
+const hardButton = document.getElementById("hard")
+const difficulty = document.querySelectorAll('.difficulty');
+
 let currentPlayer = 'X';
 let sign = 'O'; // algorithm
 let opSign = 'X'; // player
 let gameActive = true;
+let isRunning = false;
 let boardSize, winningCombinations;
 
 //checking if its a 3x3 or 4x4 board
@@ -75,6 +81,13 @@ function fieldClick(event) {
 }
 
 fields.forEach(field => field.addEventListener('click', event => {
+    if (!isRunning) {
+        isRunning = true;
+        
+        difficulty.forEach(button => {
+            button.classList.add("disabled");
+        });
+    }
     fieldClick(event);
     if (currentPlayer === sign && gameActive) {
         setTimeout(algorithmMove, 500);
@@ -112,10 +125,16 @@ function restartGame() {
     currentPlayer = 'X';
     gameStatus.textContent = `Turn of Player ${currentPlayer}`;
     gameActive = true;
+    isRunning = false;
+    difficulty.forEach(button => {
+        button.classList.remove("disabled");
+    });
 }
+
 
 function gameEnded() {
     gameActive = false;
+    isRunning = false;
     fields.forEach(field => { 
         if (!field.classList.contains('winner')) {
             field.classList.add('blank');
@@ -130,3 +149,27 @@ function pointsCounter() {
         countO.textContent = parseInt(countO.textContent) + 1;
     }
 }
+
+hardButton.classList.add("diffChosen");
+
+easyButton.addEventListener("click", () => {
+    mediumButton.classList.remove("diffChosen")
+    hardButton.classList.remove("diffChosen")
+    easyButton.classList.add("diffChosen")
+    maxDepth = 0;
+})
+
+mediumButton.addEventListener("click", () => {
+    easyButton.classList.remove("diffChosen")
+    hardButton.classList.remove("diffChosen")
+    mediumButton.classList.add("diffChosen")
+    maxDepth = 2;
+})
+
+hardButton.addEventListener("click", () => {
+    easyButton.classList.remove("diffChosen")
+    mediumButton.classList.remove("diffChosen")
+    hardButton.classList.add("diffChosen")
+    maxDepth = 8;
+})
+

@@ -20,6 +20,96 @@
     align-items: center;
 }
 
+.difficultyContainer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-580px);
+    width: 320px;
+    height: 100px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 210px;
+    color: white;
+}
+
+#buttonRow {
+    position: relative;
+    height: 50px;
+    margin-top: 15px;
+}
+
+.difficulty {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 80px;
+    height: 30px;
+    color: black;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: 0;
+    background-color: rgb(241, 186, 114);
+    transition: 0.1s ease;
+    box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.3);
+}
+
+.difficulty:hover {
+    background-color: rgb(213, 154, 78);
+    cursor: pointer;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+}
+
+.difficulty:active {
+    top: 5px;
+}
+
+.difficulty.diffChosen {
+    background-color: rgb(150, 123, 87);
+    color: rgb(233, 194, 143);
+    pointer-events: none;
+}
+
+.difficulty.disabled {
+    pointer-events: none;
+}
+
+.easyShadow {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    height: 35px;
+    width: 80px;
+}
+
+.mediumShadow {
+    position: absolute;
+    top: 0;
+    left: 120px;
+    height: 35px;
+    width: 80px;
+}
+
+.hardShadow {
+    position: absolute;
+    top: 0;
+    left: 220px;
+    height: 35px;
+    width: 80px;
+}
+
+.diffShadow {
+    position: absolute;
+    top: 5px;
+    height: 30px;
+    width: 80px;
+    background-color: rgb(131, 88, 31);
+    border-radius: 5px;
+}
+
 .status {
     text-align: center;
     font-size: 30px;
@@ -151,7 +241,9 @@
 }
 
 #restart {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     z-index: 10;
     width: 150px;
     height: 40px;
@@ -161,8 +253,8 @@
     font-weight: 700;
     font-size: 18px;
     border: 0;
-    transition: 0.2s ease;
-    box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.3);
+    transition: 0.1s ease;
+    box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.3);
 }
 
 #restart:hover {
