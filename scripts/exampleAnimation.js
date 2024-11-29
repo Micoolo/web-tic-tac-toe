@@ -12,15 +12,8 @@ function animation() {
     const previousIndex = currentIndex;
 
     if (currentIndex < images.length - 1) {
-        setTimeout(function() {
-            images[previousIndex].classList.remove("active");
-        }, 400);
-        
         currentIndex ++;
-
-        setTimeout(function() {
-            images[currentIndex].classList.add("active");
-        }, 0);
+        images[currentIndex].classList.add("active");
     }
 
     if(currentIndex === (images.length - 1)) {
@@ -77,15 +70,13 @@ startButton.addEventListener("click", () => {
 
 function changeImage(index) {
     const previousIndex = currentIndex;
-    setTimeout(function() {
+    if(index < currentIndex) {
         images[previousIndex].classList.remove("active");
-    }, 250);
+    }
 
     currentIndex = index;
 
-    setTimeout(function() {
-        images[currentIndex].classList.add("active");
-    }, 0);
+    images[currentIndex].classList.add("active");
 }
 
 previousButton.addEventListener("click", () => {
