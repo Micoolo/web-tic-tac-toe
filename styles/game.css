@@ -30,84 +30,22 @@
     text-align: center;
     font-size: 30px;
     font-weight: 700;
-    margin-top: 210px;
+    margin-top: 110px;
     color: white;
 }
 
-#buttonRow {
-    position: relative;
-    height: 50px;
-    margin-top: 15px;
-}
-
-.difficulty {
+.visualizationContainer {
     position: absolute;
     top: 0;
-    left: 0;
-    z-index: 10;
-    width: 80px;
-    height: 30px;
-    color: black;
-    font-size: 16px;
+    left: 50%;
+    transform: translateX(-580px);
+    width: 320px;
+    height: 100px;
+    text-align: center;
+    font-size: 24px;
     font-weight: 700;
-    border-radius: 5px;
-    border: 0;
-    background-color: rgb(241, 186, 114);
-    transition: 0.1s ease;
-    box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.3);
-}
-
-.difficulty:hover {
-    background-color: rgb(213, 154, 78);
-    cursor: pointer;
-    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
-}
-
-.difficulty:active {
-    top: 5px;
-}
-
-.difficulty.diffChosen {
-    background-color: rgb(150, 123, 87);
-    color: rgb(233, 194, 143);
-    pointer-events: none;
-}
-
-.difficulty.disabled {
-    pointer-events: none;
-}
-
-.easyShadow {
-    position: absolute;
-    top: 0;
-    left: 20px;
-    height: 35px;
-    width: 80px;
-}
-
-.mediumShadow {
-    position: absolute;
-    top: 0;
-    left: 120px;
-    height: 35px;
-    width: 80px;
-}
-
-.hardShadow {
-    position: absolute;
-    top: 0;
-    left: 220px;
-    height: 35px;
-    width: 80px;
-}
-
-.diffShadow {
-    position: absolute;
-    top: 5px;
-    height: 30px;
-    width: 80px;
-    background-color: rgb(131, 88, 31);
-    border-radius: 5px;
+    margin-top: 230px;
+    color: white;
 }
 
 .status {
@@ -216,58 +154,6 @@
 .clickAnimation {
     animation: clickAnimation 0.2s ease-in-out;
 }
-
-.restartButton {
-    position: relative;
-    height: 45px;
-    width: 150px;
-}
-
-#restartButton3x3 {
-    margin-top: 70px;
-}
-
-#restartButton4x4 {
-    margin-top: 20px;    
-}
-
-.restartShadow {
-    position: absolute;
-    background-color: rgb(131, 88, 31);
-    height: 25px;
-    width: 150px;
-    top: 20px;
-    border-radius: 5px;
-}
-
-#restart {
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    width: 150px;
-    height: 40px;
-    background-color: rgb(241, 186, 114);
-    border-radius: 5px;
-    font-family: inherit;
-    font-weight: 700;
-    font-size: 18px;
-    border: 0;
-    transition: 0.1s ease;
-    box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.3);
-}
-
-#restart:hover {
-    background-color: rgb(213, 154, 78);
-    cursor: pointer;
-    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
-}
-
-#restart:active {
-    top: 5px;
-}
-
-
 
 .field.x {
     background-color: rgba(229, 191, 53, 0.5);

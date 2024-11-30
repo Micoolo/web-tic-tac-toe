@@ -5,6 +5,7 @@
     <title>TicTacToe with MiniMax algorithm</title>
     <link rel="stylesheet" href="styles/game.css">
     <link rel="stylesheet" href="styles/background_header.css">
+    <link rel="stylesheet" href="styles/buttons.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,6 +14,7 @@
 
     <script src="scripts/gameLogic.js" defer></script>
     <script src="scripts/algorithm.js" defer></script>
+    <script src="scripts/buttons.js" defer></script>
 </head>
 
 <body>
@@ -32,17 +34,44 @@
     <div class="container">
         <div class="difficultyContainer">
             Choose your difficulty
-            <div id="buttonRow">
+            <div class="buttonRow">
                 <div class="easyShadow">
-                    <button class="difficulty" id="easy">Easy</button>
+                    <button class="sideButton" id="easy">Easy</button>
                     <div class="diffShadow"></div>
                 </div>
                 <div class="mediumShadow">
-                    <button class="difficulty" id="medium">Medium</button>
+                    <button class="sideButton" id="medium">Medium</button>
                     <div class="diffShadow"></div>
                 </div>
                 <div class="hardShadow">
-                    <button class="difficulty" id="hard">Hard</button>
+                    <button class="sideButton" id="hard">Hard</button>
+                    <div class="diffShadow"></div>
+                </div>
+            </div>
+        </div>
+        <div class="visualizationContainer">
+            Visualization
+            <div class="buttonRow">
+                <div class="onShadow">
+                    <button class="sideButton" id="on">On</button>
+                    <div class="diffShadow"></div>
+                </div>
+                <div class="offShadow">
+                    <button class="sideButton" id="off">Off</button>
+                    <div class="diffShadow"></div>
+                </div>
+            </div>
+            <div class="buttonRow" id="speedRow">
+                <div class="slowSpeed">
+                    <button class="sideButton" id="slow">Slow</button>
+                    <div class="diffShadow"></div>
+                </div>
+                <div class="normalSpeed">
+                    <button class="sideButton" id="normal">Normal</button>
+                    <div class="diffShadow"></div>
+                </div>
+                <div class="fastSpeed">
+                    <button class="sideButton" id="fast">Fast</button>
                     <div class="diffShadow"></div>
                 </div>
             </div>

@@ -1,0 +1,243 @@
+/* ############## RESTART BUTTON ############## */
+.restartButton {
+    position: relative;
+    height: 45px;
+    width: 150px;
+}
+
+#restartButton3x3 {
+    margin-top: 70px;
+}
+
+#restartButton4x4 {
+    margin-top: 20px;    
+}
+
+.restartShadow {
+    position: absolute;
+    background-color: rgb(131, 88, 31);
+    height: 25px;
+    width: 150px;
+    top: 20px;
+    border-radius: 5px;
+}
+
+#restart {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 150px;
+    height: 40px;
+    background-color: rgb(241, 186, 114);
+    border-radius: 5px;
+    font-family: inherit;
+    font-weight: 700;
+    font-size: 18px;
+    border: 0;
+    transition: 0.1s ease;
+    box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.3);
+}
+
+#restart:hover {
+    background-color: rgb(213, 154, 78);
+    cursor: pointer;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+}
+
+#restart:active {
+    top: 5px;
+}
+
+/* ############## SIDE BUTTONS ############## */
+
+.buttonRow {
+    position: relative;
+    height: 50px;
+    margin-top: 15px;
+}
+
+.sideButton {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 80px;
+    height: 30px;
+    color: black;
+    font-size: 16px;
+    font-weight: 700;
+    border-radius: 5px;
+    border: 0;
+    background-color: rgb(241, 186, 114);
+    transition: 0.1s ease;
+    box-shadow: 4px 0px 6px rgba(0, 0, 0, 0.3);
+}
+
+.sideButton:hover {
+    background-color: rgb(213, 154, 78);
+    cursor: pointer;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);
+}
+
+.sideButton:active {
+    top: 5px;
+}
+
+.sideButton.diffChosen {
+    background-color: rgb(150, 123, 87);
+    color: rgb(233, 194, 143);
+    pointer-events: none;
+}
+
+.sideButton.disabled {
+    pointer-events: none;
+}
+
+.diffShadow {
+    position: absolute;
+    top: 5px;
+    height: 30px;
+    width: 80px;
+    background-color: rgb(131, 88, 31);
+    border-radius: 5px;
+}
+
+/* ############## DIFFICULTY BUTTONS ############## */
+
+.easyShadow {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    height: 35px;
+    width: 80px;
+}
+
+.mediumShadow {
+    position: absolute;
+    top: 0;
+    left: 120px;
+    height: 35px;
+    width: 80px;
+}
+
+.hardShadow {
+    position: absolute;
+    top: 0;
+    left: 220px;
+    height: 35px;
+    width: 80px;
+}
+
+/* ############## VISUALIZATION BUTTONS ############## */
+
+.onShadow {
+    position: absolute;
+    top: 0;
+    left: 70px;
+    height: 35px;
+    width: 80px;
+}
+
+.offShadow {
+    position: absolute;
+    top: 0;
+    left: 170px;
+    height: 35px;
+    width: 80px;
+}
+
+#speedRow {
+    margin-top: 0;
+}
+
+.slowSpeed {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    height: 35px;
+    width: 80px;
+}
+
+.normalSpeed {
+    position: absolute;
+    top: 0;
+    left: 120px;
+    height: 35px;
+    width: 80px;
+}
+
+.fastSpeed {
+    position: absolute;
+    top: 0;
+    left: 220px;
+    height: 35px;
+    width: 80px;
+}
+
+#speedRow .hidden {
+    pointer-events: none;
+}
+
+/* ############## DESCRIPTION/EXAMPLE BUTTONS ############## */
+
+.exampleButton {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    height: 80px;
+    width: 80px;
+    background-color: rgb(241, 186, 114);
+    border: 0px;
+    color: rgb(168, 139, 101);
+    font-size: 40px;
+    transition: 0.1s ease;
+}
+
+.exampleButton:hover {
+    cursor: pointer;
+    color: rgb(103, 118, 255);
+}
+
+.exampleButton:active {
+    top: 5px;
+}
+
+.playShadow {
+    position: absolute;
+    height: 85px;
+    top: 20px;
+    transform: translateX(362px);
+}
+
+.previousShadow {
+    position: absolute;
+    height: 85px;
+    top: 120px;
+    transform: translateX(312px);
+}
+
+.nextShadow {
+    position: absolute;
+    height: 85px;
+    top: 120px;
+    transform: translateX(412px);
+}
+
+.shadow {
+    position: absolute;
+    background-color: rgb(197, 4, 4);
+    top: 5px;
+    height: 80px;
+    width: 80px;
+    border-radius: 20px;
+    z-index: -1;
+    background-color: rgb(131, 88, 31);
+}
+
+.exampleButton.disabled {
+    background-color: rgb(150, 123, 87);
+    color: rgb(233, 194, 143);
+    pointer-events: none;
+}

@@ -1,5 +1,6 @@
 let maxDepth = 9;
-
+let visualization = true;
+let visualizationSpeed = 1000;
 async function algorithmMove () {
     if (!gameActive) return;
     isAlgorithmRunning = true;
@@ -24,8 +25,9 @@ async function algorithmMove () {
                 }
             }
         }
-        
-        await displayMoveValues(moveValues);
+        if (visualization) {
+            await displayMoveValues(moveValues);
+        }
     }
     if (bestPosition !== -1) {
         board[bestPosition] = currentPlayer;
@@ -37,6 +39,7 @@ async function algorithmMove () {
             gameStatus.textContent = `Player ${sign} wins!`;
             pointsCounter();
             gameEnded();
+            isAlgorithmRunning = false;
             return;
         }
 
@@ -44,6 +47,7 @@ async function algorithmMove () {
             gameStatus.textContent = 'Draw!';
             countDraws.textContent = parseInt(countDraws.textContent) + 1;
             gameEnded();
+            isAlgorithmRunning = false;
             return;
         }
 
@@ -135,8 +139,8 @@ async function displayMoveValues(moveValues) {
             const field = fields[i];
             const originalText = field.textContent;
             field.textContent = moveValues[i];
-            field.style.color = moveValues[i] > 0 ? 'green' : moveValues[i] < 0 ? 'red' : 'black';
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            field.style.color = moveValues[i] > 0 ? 'rgb(113, 168, 30)' : moveValues[i] < 0 ? 'red' : 'black';
+            await new Promise(resolve => setTimeout(resolve, visualizationSpeed));
             field.textContent = originalText;
             field.style.color = 'black';
         }

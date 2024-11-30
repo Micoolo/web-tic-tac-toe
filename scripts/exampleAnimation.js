@@ -1,7 +1,5 @@
-const images = document.querySelectorAll(".image");  // pobieranie obrazkow
-const startButton = document.getElementById("playButton");
-const previousButton = document.getElementById("previousButton");
-const nextButton = document.getElementById("nextButton");
+const images = document.querySelectorAll(".image");
+
 images[0].classList.add("active");
 let currentIndex = 0;
 let isRunning = false;
@@ -58,16 +56,6 @@ function stopAnimation() {
     startButton.innerHTML = '<i class="fa-solid fa-play"></i>';
 }
 
-startButton.addEventListener("click", () => {
-    if (isRunning) {
-        stopAnimation();
-    } else if (animationEnded) {
-        resetAnimation();
-    } else if (!animationEnded) {
-        startAnimation();
-    }
-})
-
 function changeImage(index) {
     const previousIndex = currentIndex;
     if(index < currentIndex) {
@@ -77,28 +65,4 @@ function changeImage(index) {
     currentIndex = index;
 
     images[currentIndex].classList.add("active");
-}
-
-previousButton.addEventListener("click", () => {
-    if (currentIndex > 0) {
-        const previousIndex = (currentIndex - 1);
-        changeImage(previousIndex);
-    }
-});
-
-nextButton.addEventListener("click", () => {
-    if (currentIndex < 3) {
-        const nextIndex = (currentIndex + 1);
-        changeImage(nextIndex);
-    }
-});
-
-function updateButtonState() {
-    if (isRunning) {
-        previousButton.classList.add("disabled");
-        nextButton.classList.add("disabled");
-    } else {
-        previousButton.classList.remove("disabled");
-        nextButton.classList.remove("disabled");
-    }
 }
