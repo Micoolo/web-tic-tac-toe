@@ -1,9 +1,11 @@
-let maxDepth = 8;
+let maxDepth = 9;
 
-function algorithmMove () {
+async function algorithmMove () {
     if (!gameActive) return;
+    isAlgorithmRunning = true;
     
     let bestPosition = -1;
+    let moveValues = Array(board.length).fill(null); 
 
     if (maxDepth === 0) {
         bestPosition = makeRandomMove();
@@ -15,12 +17,15 @@ function algorithmMove () {
                 board[i] = currentPlayer;
                 let score = minimax (-Infinity, Infinity, 0, false);
                 board[i] = null;
+                moveValues[i] = score;
                 if (score > bestScore) {
                     bestScore = score;
                     bestPosition = i;
                 }
             }
         }
+        
+        await displayMoveValues(moveValues);
     }
     if (bestPosition !== -1) {
         board[bestPosition] = currentPlayer;
@@ -44,6 +49,7 @@ function algorithmMove () {
 
         currentPlayer = opSign;
         gameStatus.textContent = `Turn of Player ${currentPlayer}`;
+        isAlgorithmRunning = false;
     }
 }
 
@@ -62,7 +68,7 @@ function getAvailableMoves() {
 function makeRandomMove() {
     let availableMoves = getAvailableMoves();
 
-    if (availableMoves === 0) {
+    if (availableMoves.length === 0) {
         return null;
     }
 
@@ -120,5 +126,19 @@ function minimax (alpha, beta, depth, isMaximizingPlayer) {
             }
         }
         return bestScore;
+    }
+}
+
+async function displayMoveValues(moveValues) {
+    for (let i = 0; i < moveValues.length; i++) {
+        if (moveValues[i] !== null) {
+            const field = fields[i];
+            const originalText = field.textContent;
+            field.textContent = moveValues[i];
+            field.style.color = moveValues[i] > 0 ? 'green' : moveValues[i] < 0 ? 'red' : 'black';
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            field.textContent = originalText;
+            field.style.color = 'black';
+        }
     }
 }

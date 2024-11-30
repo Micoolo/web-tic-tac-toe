@@ -13,6 +13,7 @@ let sign = 'O'; // algorithm
 let opSign = 'X'; // player
 let gameActive = true;
 let isRunning = false;
+let isAlgorithmRunning = false;
 let boardSize, winningCombinations;
 
 //checking if its a 3x3 or 4x4 board
@@ -81,6 +82,7 @@ function fieldClick(event) {
 }
 
 fields.forEach(field => field.addEventListener('click', event => {
+    if (isAlgorithmRunning) return;
     if (!isRunning) {
         isRunning = true;
         
@@ -170,6 +172,6 @@ hardButton.addEventListener("click", () => {
     easyButton.classList.remove("diffChosen")
     mediumButton.classList.remove("diffChosen")
     hardButton.classList.add("diffChosen")
-    maxDepth = 8;
+    maxDepth = 9;
 })
 
