@@ -1,6 +1,8 @@
 let maxDepth = 9;
-let visualization = true;
+let visualization = false;
 let visualizationSpeed = 1000;
+let cancelAnimation = false;
+
 async function algorithmMove () {
     if (!gameActive) return;
     isAlgorithmRunning = true;
@@ -25,9 +27,13 @@ async function algorithmMove () {
                 }
             }
         }
-        if (visualization) {
+        if (!cancelAnimation && visualization) {
             await displayMoveValues(moveValues);
         }
+    }
+    if (cancelAnimation) {
+        isAlgorithmRunning = false;
+        return;
     }
     if (bestPosition !== -1) {
         board[bestPosition] = currentPlayer;
@@ -134,14 +140,24 @@ function minimax (alpha, beta, depth, isMaximizingPlayer) {
 }
 
 async function displayMoveValues(moveValues) {
+    const originalTexts = [];
+
     for (let i = 0; i < moveValues.length; i++) {
+        if (cancelAnimation) break;
         if (moveValues[i] !== null) {
             const field = fields[i];
-            const originalText = field.textContent;
+            originalTexts[i] = field.textContent;
             field.textContent = moveValues[i];
             field.style.color = moveValues[i] > 0 ? 'rgb(113, 168, 30)' : moveValues[i] < 0 ? 'red' : 'black';
             await new Promise(resolve => setTimeout(resolve, visualizationSpeed));
-            field.textContent = originalText;
+        }
+    }
+
+    for (let i = 0; i < moveValues.length; i++) {
+        if (cancelAnimation) break;
+        if (moveValues[i] !== null) {
+            const field = fields[i];
+            field.textContent = originalTexts[i];
             field.style.color = 'black';
         }
     }

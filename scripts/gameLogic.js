@@ -114,11 +114,18 @@ function highlightWinningFields() {
     });
 }
 
-function restartGame() {
+async function restartGame() {
+    if (visualization) {
+        cancelAnimation = true;
+        while (isAlgorithmRunning) {
+            await new Promise(resolve => setTimeout(resolve, 10));
+        }
+    }
     board = Array(boardSize*boardSize).fill(null);
     fields.forEach(field => {
         field.textContent = '';
         field.classList.remove('x', 'o', 'winner', 'blank');
+        field.style.color = 'black';
     });
     currentPlayer = 'X';
     gameStatus.textContent = `Turn of Player ${currentPlayer}`;
@@ -127,6 +134,7 @@ function restartGame() {
     sideButton.forEach(button => {
         button.classList.remove("disabled");
     });
+    cancelAnimation = false;
 }
 
 
