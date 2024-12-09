@@ -70,21 +70,21 @@ if (onButton && offButton && slowSpeed && normalSpeed && fastSpeed && speedRow) 
     normalSpeed.classList.add("diffChosen");
 
     slowSpeed.addEventListener("click", () => {
-        visualizationSpeed = 1500;
+        visualizationSpeed = 1000;
         fastSpeed.classList.remove("diffChosen");
         normalSpeed.classList.remove("diffChosen");
         slowSpeed.classList.add("diffChosen");
     });
 
     normalSpeed.addEventListener("click", () => {
-        visualizationSpeed = 1000;
+        visualizationSpeed = 500;
         slowSpeed.classList.remove("diffChosen");
         fastSpeed.classList.remove("diffChosen");
         normalSpeed.classList.add("diffChosen");
     });
 
     fastSpeed.addEventListener("click", () => {
-        visualizationSpeed = 500;
+        visualizationSpeed = 250;
         slowSpeed.classList.remove("diffChosen");
         normalSpeed.classList.remove("diffChosen");
         fastSpeed.classList.add("diffChosen");

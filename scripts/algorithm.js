@@ -1,6 +1,6 @@
 let maxDepth = 9;
 let visualization = false;
-let visualizationSpeed = 1000;
+let visualizationSpeed = 500;
 let cancelAnimation = false;
 
 async function algorithmMove () {
