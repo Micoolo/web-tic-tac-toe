@@ -48,6 +48,20 @@
     color: white;
 }
 
+.moveSelectContainer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-580px);
+    width: 320px;
+    height: 100px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    margin-top: 370px;
+    color: white;
+}
+
 .status {
     text-align: center;
     font-size: 30px;

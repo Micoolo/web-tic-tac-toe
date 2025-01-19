@@ -10,6 +10,9 @@ body {
     font-weight: 300;
 }
 
+div {
+    /* border: 1px solid white; */
+}
 /* scrollbar remove */
 html {
     -ms-overflow-style: none; /*Internet Explorer 10+ */

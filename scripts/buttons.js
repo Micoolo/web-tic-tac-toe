@@ -11,6 +11,9 @@ const speedRow = document.getElementById('speedRow');
 const startButton = document.getElementById("playButton");
 const previousButton = document.getElementById("previousButton");
 const nextButton = document.getElementById("nextButton");
+const playerButton = document.getElementById("playerButton");
+const pcButton = document.getElementById("pcButton");
+const startGameButton = document.getElementById("startGameButton");
 
 //############## DIFFICULTY BUTTONS ##############
 
@@ -46,6 +49,9 @@ if (onButton && offButton && slowSpeed && normalSpeed && fastSpeed && speedRow) 
 
     offButton.classList.add("diffChosen");
     speedRow.style.opacity = 0;
+    buttonsInSpeedRow.forEach(button => {
+        button.classList.add("disabled");
+    });
 
     onButton.addEventListener("click", () => {
         offButton.classList.remove("diffChosen");
@@ -53,7 +59,7 @@ if (onButton && offButton && slowSpeed && normalSpeed && fastSpeed && speedRow) 
         visualization = true; 
         speedRow.style.opacity = 1;
         buttonsInSpeedRow.forEach(button => {
-            button.classList.remove("hidden");
+            button.classList.remove("disabled");
         });
     });
 
@@ -63,7 +69,7 @@ if (onButton && offButton && slowSpeed && normalSpeed && fastSpeed && speedRow) 
         visualization = false;
         speedRow.style.opacity = 0;
         buttonsInSpeedRow.forEach(button => {
-            button.classList.add("hidden");
+            button.classList.add("disabled");
         });
     });
 
@@ -89,6 +95,32 @@ if (onButton && offButton && slowSpeed && normalSpeed && fastSpeed && speedRow) 
         normalSpeed.classList.remove("diffChosen");
         fastSpeed.classList.add("diffChosen");
     });
+}
+
+//############## MOVE SELECTION BUTTONS ##############
+
+if (playerButton && pcButton && startGameButton && startGameRow) {
+    playerButton.classList.add("diffChosen");
+    startGameRow.style.opacity = 0;
+    startGameButton.classList.add("disabled");
+
+    pcButton.addEventListener("click", () => {
+        playerButton.classList.remove("diffChosen");
+        pcButton.classList.add("diffChosen");
+        startGameRow.style.opacity = 1;
+        startGameButton.classList.remove("disabled");
+        currentPlayer = "O";
+        playerMovesFirst = false;
+    })
+
+    playerButton.addEventListener("click", () => {
+        playerButton.classList.add("diffChosen");
+        pcButton.classList.remove("diffChosen");
+        startGameRow.style.opacity = 0;
+        startGameButton.classList.add("disabled");
+        currentPlayer = "X";
+        playerMovesFirst = false;
+    })
 }
 
 //############## EXAMPLE BUTTONS ##############

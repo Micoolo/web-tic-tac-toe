@@ -175,8 +175,34 @@
     width: 80px;
 }
 
-#speedRow .hidden {
-    pointer-events: none;
+/* ############## MOVE SELECTION BUTTONS ############## */
+
+.playerMove {
+    position: absolute;
+    top: 0;
+    left: 70px;
+    height: 35px;
+    width: 80px;
+}
+
+.pcMove {
+    position: absolute;
+    top: 0;
+    left: 170px;
+    height: 35px;
+    width: 80px;
+}
+
+#startGameRow {
+    margin-top: 0;
+}
+
+.startShadow {
+    position: absolute;
+    top: 0;
+    left: 120px;
+    height: 35px;
+    width: 80px;
 }
 
 /* ############## DESCRIPTION/EXAMPLE BUTTONS ############## */

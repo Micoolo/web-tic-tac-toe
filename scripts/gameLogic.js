@@ -11,6 +11,7 @@ let gameActive = true;
 let isRunning = false;
 let isAlgorithmRunning = false;
 let boardSize, winningCombinations;
+let playerMovesFirst = true;
 
 //checking if its a 3x3 or 4x4 board
 if(document.getElementById("board3x3")) {
@@ -41,6 +42,24 @@ if(document.getElementById("board3x3")) {
     ];
 }
 let board = Array(boardSize * boardSize).fill(null);
+
+function startGame() {
+    if (!isRunning) {
+        isRunning = true;
+
+        sideButton.forEach(button => {
+            button.classList.add("disabled");
+        });
+
+        if (currentPlayer === sign) {
+            setTimeout(() => {
+                algorithmMove();
+            }, 500);
+        }
+
+        gameStatus.textContent = `Turn of Player ${currentPlayer}`;
+    }
+}
 
 function fieldClick(event) {
     const index = event.target.dataset.index;
@@ -78,7 +97,7 @@ function fieldClick(event) {
 }
 
 fields.forEach(field => field.addEventListener('click', event => {
-    if (isAlgorithmRunning) return;
+    if (isAlgorithmRunning || currentPlayer === "O") return;
     if (!isRunning) {
         isRunning = true;
         
@@ -127,7 +146,11 @@ async function restartGame() {
         field.classList.remove('x', 'o', 'winner', 'blank');
         field.style.color = 'black';
     });
-    currentPlayer = 'X';
+    if (playerMovesFirst) {
+        currentPlayer = 'X';
+    } else {
+        currentPlayer = 'O';
+    }
     gameStatus.textContent = `Turn of Player ${currentPlayer}`;
     gameActive = true;
     isRunning = false;

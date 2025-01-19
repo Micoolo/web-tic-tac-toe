@@ -76,6 +76,25 @@
                 </div>
             </div>
         </div>
+        <div class="moveSelectContainer">
+            Select who moves first
+            <div class="buttonRow">
+                <div class="playerMove">
+                    <button class="sideButton" id="playerButton">Player</button>
+                    <div class="diffShadow"></div>
+                </div>
+                <div class="pcMove">
+                    <button class="sideButton" id="pcButton">PC</button>
+                    <div class="diffShadow"></div>
+                </div>
+            </div>
+            <div class="buttonRow" id="startGameRow">
+                <div class="startShadow">
+                    <button class="sideButton" id="startGameButton" onclick="startGame()">Start</button>
+                    <div class="diffShadow"></div>
+                </div>
+            </div>
+        </div>
         <div class="gameContainer" id="gameContainer3x3">
             <div class="board" id="board3x3">
                 <div class="field" data-index="0"></div>
